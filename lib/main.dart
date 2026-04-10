@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Username",
                   border: OutlineInputBorder(),
-                  //prefixIcon: Icon(Icons.person), // Menambahkan ikon pengguna di dalam input field
                 ),
               ),
 
@@ -39,7 +38,6 @@ class MyApp extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Password",
                   border: OutlineInputBorder(),
-                  //prefixIcon: Icon(Icons.lock), // Menambahkan ikon kunci di dalam input field
                 ),
               ),
 
