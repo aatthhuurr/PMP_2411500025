@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'PMP2411500025',
       debugShowCheckedModeBanner: true,
-      // Menggunakan Named Routes sesuai materi halaman 8
       initialRoute: '/',
       routes: {
         '/': (context) => LoginPage(),

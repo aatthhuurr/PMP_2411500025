@@ -6,7 +6,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // Controller untuk mengambil input sesuai materi halaman 13
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -44,7 +43,6 @@ class _LoginPageState extends State<LoginPage> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Kirim data menggunakan arguments sesuai materi halaman 14
                   Navigator.pushNamed(
                     context,
                     '/dashboard',

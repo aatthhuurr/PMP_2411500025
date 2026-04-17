@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Mengambil data lewat arguments sesuai materi halaman 10
     final args = ModalRoute.of(context)!.settings.arguments as Map;
     final String username = args['username'] ?? "";
     final String password = args['password'] ?? "";
@@ -24,7 +23,6 @@ class DashboardPage extends StatelessWidget {
             ElevatedButton(
               child: Text('Kembali ke Home'),
               onPressed: () {
-                // Kembali ke halaman sebelumnya menggunakan pop sesuai materi halaman 5
                 Navigator.pop(context);
               },
             ),
