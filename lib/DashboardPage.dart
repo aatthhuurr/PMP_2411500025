@@ -1,12 +1,10 @@
-// lib/DashboardPage.dart
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // 1. Mengambil argumen yang dikirim melalui Named Route
-    final args =
-        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    // Mengambil data lewat arguments sesuai materi halaman 10
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
     final String username = args['username'] ?? "";
     final String password = args['password'] ?? "";
 
@@ -16,16 +14,17 @@ class DashboardPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // 2. Menampilkan data sesuai instruksi tugas
             Text(
               "Hallo, $username",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 10),
+            Text("Password: $password"),
             SizedBox(height: 20),
             ElevatedButton(
               child: Text('Kembali ke Home'),
               onPressed: () {
-                // Perintah untuk kembali ke halaman sebelumnya
+                // Kembali ke halaman sebelumnya menggunakan pop sesuai materi halaman 5
                 Navigator.pop(context);
               },
             ),
