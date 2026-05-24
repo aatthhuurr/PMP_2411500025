@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'PMP2411500025',
       debugShowCheckedModeBanner: true,
-      initialRoute: '/counter',
+      initialRoute: '/',
       routes: {
         '/': (context) => LoginPage(),
         '/dashboard': (context) => DashboardPage(),
