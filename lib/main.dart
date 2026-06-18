@@ -5,6 +5,7 @@ import 'LoginPage.dart';
 import 'DashboardPage.dart';
 import 'CounterPage.dart';
 import 'CrudPage.dart';
+import 'ApiPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => DashboardPage(),
         '/counter': (context) => const CounterPage(),
         '/crud': (context) => const CrudPage(),
+        '/api': (context) => const ApiPage(),
       },
     );
   }

@@ -74,6 +74,15 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(height: 10),
 
             ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/api');
+              },
+              child: const Text('REST API'),
+            ),
+
+            const SizedBox(height: 10),
+
+            ElevatedButton(
               onPressed: logout,
               child: const Text('Logout'),
             ),
