@@ -21,11 +21,20 @@ class DashboardPage extends StatelessWidget {
             Text("Password: $password"),
             SizedBox(height: 20),
             ElevatedButton(
-              child: Text('Kembali ke Home'),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+  child: Text('Kembali ke Home'),
+  onPressed: () {
+    Navigator.pop(context);
+  },
+),
+
+SizedBox(height: 10),
+
+ElevatedButton(
+  child: Text('CRUD Mahasiswa'),
+  onPressed: () {
+    Navigator.pushNamed(context, '/crud');
+  },
+),
           ],
         ),
       ),
