@@ -1,6 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'services/api_service.dart';
 
 class ApiPage extends StatefulWidget {
   const ApiPage({super.key});
@@ -13,17 +12,11 @@ class _ApiPageState extends State<ApiPage> {
   List mahasiswa = [];
 
   Future<void> getData() async {
-    final response = await http.get(
-      Uri.parse(
-        'https://api.atmaluhur.ac.id/pmp/mahasiswa',
-      ),
-    );
+    final data = await ApiService.getMahasiswa();
 
-    if (response.statusCode == 200) {
-      setState(() {
-        mahasiswa = jsonDecode(response.body);
-      });
-    }
+    setState(() {
+      mahasiswa = data;
+    });
   }
 
   @override
@@ -56,6 +49,28 @@ class _ApiPageState extends State<ApiPage> {
                   ),
                   subtitle: Text(
                     mahasiswa[index]['nim'],
+                  ),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () async {
+                      bool berhasil =
+                          await ApiService.deleteMahasiswa(
+                        mahasiswa[index]['id'],
+                      );
+
+                      if (berhasil) {
+                        getData();
+
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              'Data berhasil dihapus',
+                            ),
+                          ),
+                        );
+                      }
+                    },
                   ),
                 );
               },

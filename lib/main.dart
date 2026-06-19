@@ -1,35 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'pages/home_page.dart';
 
-import 'LoginPage.dart';
-import 'DashboardPage.dart';
-import 'CounterPage.dart';
-import 'CrudPage.dart';
-import 'ApiPage.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await Hive.initFlutter();
-  await Hive.openBox('mahasiswaBox');
-
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PMP2411500025',
-      debugShowCheckedModeBanner: true,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => LoginPage(),
-        '/dashboard': (context) => DashboardPage(),
-        '/counter': (context) => const CounterPage(),
-        '/crud': (context) => const CrudPage(),
-        '/api': (context) => const ApiPage(),
-      },
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
     );
   }
 }
